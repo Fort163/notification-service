@@ -1,0 +1,9 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+  mail:
+    host: ${MAIL_HOST}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    port: ${MAIL_PORT}
+    protocol: ${MAIL_PROTOCOL}
