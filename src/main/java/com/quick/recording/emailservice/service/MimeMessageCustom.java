@@ -27,6 +27,7 @@ public class MimeMessageCustom {
     private String username;
 
     private final JavaMailSender javaMailSender;
+    //
     private final TemplateEngine templateEngine;
 
     public MimeMessage getMimeMessage(MailDTO mail, MultipartFile[] files) throws MessagingException {
