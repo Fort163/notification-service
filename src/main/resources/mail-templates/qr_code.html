@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<div style="width:1000px;
+height:600px;
+display:grid;
+background-repeat:no-repeat;
+grid-template-columns: 1fr 11fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+grid-template-rows: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+background-color: rgb(201,200,200);
+font-size: x-large;">
+    <div style="
+    grid-column-start:2;
+    grid-column-end:10;
+    grid-row-start:2;
+    grid-row-end:10;
+    display:grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 180px 40px 10px 20px 10px 40px 120px 60px;
+    background-color:rgb(108,199,253);" >
+        <div style="grid-column-start:1;
+                    grid-column-end:5;
+                    grid-row-start:1;
+                    grid-row-end:1;">
+            <img src="cid:qr_logo.png"
+                 height="150px" width="200px"
+                 style="margin:1%">
+        </div>
+        <div style="
+                grid-column-start:3;
+                grid-column-end:6;
+                grid-row-start:4;
+                grid-row-end:4;"
+             th:text="${message.create('mail.code.verification.code.message')}">
+        </div>
+        <div style="
+                grid-column-start:6;
+                grid-column-end:6;
+                grid-row-start:3;
+                grid-row-end:6;
+                padding-left: 15px;
+                background-color: #6f6f73;
+                color: aliceblue;
+                font-size: xx-large;"
+             th:text="${code}">
+        </div>
+        <div style="
+            grid-row: 8;
+            grid-column-start:1;
+            grid-column-end:8;
+            font-size:smaller;
+            color:#5c5f65;
+            margin:20px"
+             th:text="${message.create('mail.code.no.reply')}">
+        </div>
+    </div>
+</div>
+</html>

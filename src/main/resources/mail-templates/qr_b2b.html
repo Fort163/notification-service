@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html style="height: 100%;margin:0 ;overflow: hidden;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--<title th:text="${messageUtil.create('mail.code.verification.code')}"></title>-->
+    <title>Проверочный код</title>
+</head>
+<body style="height: 100%;margin:0;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             background-color: rgb(201,200,200);
+             overflow: auto;
+             font-size: x-large;
+">
+<div style="background-image: url('/images/qr_logo.png');
+            width: 75%; height: 75%;
+            background-repeat: no-repeat;
+            background-color: rgb(108,199,253);
+            background-size: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column">
+
+    <div style="display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;">
+        <label>Ваш проверочный код.</label>
+        <label style="background-color: #6f6f73;
+                      color: aliceblue;
+                      font-size: xx-large;">
+            Ваш проверочный код.</label>
+    </div>
+
+</div>
+<label style="position: absolute;
+              bottom: 12.5%;
+              left: 12.5%;
+              font-size: smaller;
+              color: #5c5f65;
+              margin: 20px">
+    Ваш проверочный код.
+</label>
+<!--<img src="/images/qr_logo.png">-->
+<!--<img src="cid:qr_logo.png" height="50" width="50"/>-->
+<!--<p th:text="${@messageUtil.create('mail.code.verification.code')}"></p>
+<p th:text="${@messageUtil.create('mail.code.verification.code.message')}"></p>
+<p th:text="${@messageUtil.create('mail.code.no.reply')}"></p>-->
+</body>
+</html>
