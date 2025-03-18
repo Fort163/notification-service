@@ -10,11 +10,15 @@ http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/
 http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
 
     <changeSet id="1" author="Fort163">
-        <sqlFile path="db/changelog/script/create-schema-notification.sql"/>
+        <sqlFile path="db/changelog/script/create-schema-notification-mail.sql"/>
     </changeSet>
 
     <changeSet id="2" author="Fort163">
-        <sqlFile path="db/changelog/script/create-schema-verification.sql"/>
+        <sqlFile path="db/changelog/script/create-schema-verification-mail.sql"/>
+    </changeSet>
+
+    <changeSet id="3" author="Fort163">
+        <sqlFile path="db/changelog/script/create-schema-notification-message.sql"/>
     </changeSet>
 
 </databaseChangeLog>
