@@ -30,9 +30,15 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/qr-message");
+        registry.enableStompBrokerRelay("/queue", "/topic")
+                .setUserDestinationBroadcast("/queue/unresolved-user-destination")
+                .setUserRegistryBroadcast("/queue/simp-user-registry")
+                .setAutoStartup(true)
+                .setRelayHost("localhost")
+                .setRelayPort(61613)
+                .setClientLogin("guest")
+                .setClientPasscode("guest");
         registry.setApplicationDestinationPrefixes("/qr-app");
-        registry.setUserDestinationPrefix("/user");
     }
 
     @Override

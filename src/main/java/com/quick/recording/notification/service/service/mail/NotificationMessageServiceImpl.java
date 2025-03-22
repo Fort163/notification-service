@@ -1,6 +1,7 @@
 package com.quick.recording.notification.service.service.mail;
 
 import com.quick.recording.gateway.config.MessageUtil;
+import com.quick.recording.gateway.config.context.QRContextHandler;
 import com.quick.recording.gateway.config.error.exeption.MethodNotSupported;
 import com.quick.recording.gateway.dto.notification.message.NotificationMessageDto;
 import com.quick.recording.gateway.main.service.MainServiceAbstract;
@@ -53,14 +54,13 @@ public class NotificationMessageServiceImpl extends MainServiceAbstract<Notifica
     }
 
     private NotificationMessageDto convertAndSendQR(NotificationMessageDto dto) {
-        String destination = createDestination("/qr-message/notification",dto);
         switch (dto.getSendType()){
             case TO_USER -> {
-                template.convertAndSendToUser(dto.getToUser(),destination, dto);
+                template.convertAndSendToUser(dto.getToUser(),createDestination("/queue/notification",dto), dto);
                 break;
             }
             case ALL -> {
-                template.convertAndSend(destination,dto);
+                template.convertAndSend(createDestination("/topic/notification",dto),dto);
                 break;
             }
         }

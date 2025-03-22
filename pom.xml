@@ -17,6 +17,7 @@
 		<java.version>17</java.version>
 		<postgres.version>42.2.19</postgres.version>
 		<qr.gateway.version>0.0.1-SNAPSHOT</qr.gateway.version>
+		<reactor.netty.version>1.2.4</reactor.netty.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,6 +27,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor.netty</groupId>
+			<artifactId>reactor-netty</artifactId>
+			<version>${reactor.netty.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

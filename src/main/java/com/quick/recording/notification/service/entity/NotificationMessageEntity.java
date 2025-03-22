@@ -10,8 +10,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @EqualsAndHashCode(callSuper = true)
 @Entity(name = "NotificationMessage")
 @Data
@@ -36,8 +34,10 @@ public class NotificationMessageEntity extends SmartEntity {
     private String path;
     @Column(name = "message_path")
     private String messagePath;
-    @Column(name = "message")
+    @Column(name = "message", nullable = false)
     private String message;
+    @Column(name = "message_code")
+    private String messageCode;
     @Column(name = "json_object")
     private String jsonObject;
     @Column(name = "send", nullable = false)
