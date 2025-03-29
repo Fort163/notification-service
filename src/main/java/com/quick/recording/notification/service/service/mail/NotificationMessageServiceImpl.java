@@ -1,10 +1,9 @@
 package com.quick.recording.notification.service.service.mail;
 
 import com.quick.recording.gateway.config.MessageUtil;
-import com.quick.recording.gateway.config.context.QRContextHandler;
 import com.quick.recording.gateway.config.error.exeption.MethodNotSupported;
 import com.quick.recording.gateway.dto.notification.message.NotificationMessageDto;
-import com.quick.recording.gateway.main.service.MainServiceAbstract;
+import com.quick.recording.gateway.main.service.local.MainServiceAbstract;
 import com.quick.recording.notification.service.entity.NotificationMessageEntity;
 import com.quick.recording.notification.service.mapper.NotificationMessageMapper;
 import com.quick.recording.notification.service.repository.NotificationMessageRepository;
@@ -45,6 +44,11 @@ public class NotificationMessageServiceImpl extends MainServiceAbstract<Notifica
     @Override
     public NotificationMessageDto put(NotificationMessageDto dto) {
         throw new MethodNotSupported(super.messageUtil);
+    }
+
+    @Override
+    public Class<NotificationMessageDto> getType() {
+        return NotificationMessageDto.class;
     }
 
     private NotificationMessageDto convertAndSend(NotificationMessageDto dto) {

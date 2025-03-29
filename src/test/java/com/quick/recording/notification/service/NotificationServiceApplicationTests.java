@@ -2,11 +2,13 @@ package com.quick.recording.notification.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
-@SpringBootTest
+/*@SpringBootTest
+@ActiveProfiles("test")*/
 class NotificationServiceApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 

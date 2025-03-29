@@ -2,7 +2,7 @@ package com.quick.recording.notification.service.service.mail;
 
 import com.quick.recording.gateway.config.MessageUtil;
 import com.quick.recording.gateway.dto.notification.mail.NotificationMailDto;
-import com.quick.recording.gateway.main.service.MainServiceAbstract;
+import com.quick.recording.gateway.main.service.local.MainServiceAbstract;
 import com.quick.recording.notification.service.entity.NotificationMailEntity;
 import com.quick.recording.notification.service.mapper.NotificationMailMapper;
 import com.quick.recording.notification.service.repository.NotificationMailRepository;
@@ -28,4 +28,8 @@ public class NotificationMailServiceImpl extends MainServiceAbstract<Notificatio
         return exampleMatcher;
     }
 
+    @Override
+    public Class<NotificationMailDto> getType() {
+        return NotificationMailDto.class;
+    }
 }
