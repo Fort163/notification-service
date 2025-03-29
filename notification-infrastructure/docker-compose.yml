@@ -1,0 +1,32 @@
+version: "3.9"
+#rabbitmq-plugins list
+#rabbitmq-plugins enable rabbitmq_stomp
+#rabbitmq-plugins enable rabbitmq_web_stomp
+services:
+  redis:
+    image: redis:latest
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_USER_PASSWORD=${REDIS_USER_PASSWORD}
+    ports:
+      - "6350:6379"
+    networks:
+      - search-network
+      - notification-infrastructure-network
+  rabbitmq:
+    image: rabbitmq:4.0.7-management
+    ports:
+      - 15672:15672
+      - 5672:5672
+      - 61613:61613
+    networks:
+      - notification-infrastructure-network
+
+networks:
+  notification-infrastructure-network:
+    name: notification-infrastructure-network
+    driver: bridge
+  search-network:
+    external: true
+    name: data-search-network

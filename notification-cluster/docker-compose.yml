@@ -1,0 +1,24 @@
+version: 3.9
+
+services:
+  notification-item-1:
+    image: qr/notification-service:0.0.1-SNAPSHOT
+    ports:
+      - 8050:8050
+    links:
+      - notification-infrastructure-rabbitmq
+    networks:
+      - infrastructure-network
+  notification-item-2:
+    image: qr/notification-service:0.0.1-SNAPSHOT
+    ports:
+      - 8051:8050
+    links:
+      - notification-infrastructure-rabbitmq
+    networks:
+      - infrastructure-network
+
+networks:
+  infrastructure-network:
+    external: true
+    name: notification-infrastructure-network
