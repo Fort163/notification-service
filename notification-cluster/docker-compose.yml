@@ -1,24 +1,38 @@
 version: 3.9
 
 services:
+
   notification-item-1:
-    image: qr/notification-service:0.0.1-SNAPSHOT
+    image: fort163/qr-notification-service:0.0.1-SNAPSHOT
+    environment:
+      - ACTIVE_PROFILE=${PROFILE}
+      - CONFIG_SERVER=${CONFIG_SERVER}
     ports:
       - 8050:8050
-    links:
-      - notification-infrastructure-rabbitmq
     networks:
-      - infrastructure-network
+      - notification-infrastructure
+      - kafka
+      - single-service
+
   notification-item-2:
-    image: qr/notification-service:0.0.1-SNAPSHOT
+    image: fort163/qr-notification-service:0.0.1-SNAPSHOT
+    environment:
+      - ACTIVE_PROFILE=${PROFILE}
+      - CONFIG_SERVER=${CONFIG_SERVER}
     ports:
       - 8051:8050
-    links:
-      - notification-infrastructure-rabbitmq
     networks:
-      - infrastructure-network
+      - notification-infrastructure
+      - kafka
+      - single-service
 
 networks:
-  infrastructure-network:
+  single-service:
+    external: true
+    name: single-service-network
+  notification-infrastructure:
     external: true
     name: notification-infrastructure-network
+  kafka:
+    external: true
+    name: kafka-network

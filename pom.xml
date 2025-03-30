@@ -18,8 +18,9 @@
 		<postgres.version>42.2.19</postgres.version>
 		<qr.gateway.version>0.0.1-SNAPSHOT</qr.gateway.version>
 		<reactor.netty.version>1.2.4</reactor.netty.version>
-		<docker.image.prefix>qr</docker.image.prefix>
 		<docker.plugin.version>1.4.13</docker.plugin.version>
+		<docker.image.prefix>qr</docker.image.prefix>
+		<docker.hub.location>fort163</docker.hub.location>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -71,7 +72,7 @@
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>${docker.plugin.version}</version>
 				<configuration>
-					<repository>${docker.image.prefix}/${project.artifactId}</repository>
+					<repository>${docker.hub.location}/${docker.image.prefix}-${project.artifactId}</repository>
 					<tag>${project.version}</tag>
 					<buildArgs>
 						<JAR_FILE>
