@@ -8,7 +8,7 @@ services:
       - ACTIVE_PROFILE=${PROFILE}
       - CONFIG_SERVER=${CONFIG_SERVER}
     ports:
-      - 8050:8050
+      - "8050:8050"
     networks:
       - notification-infrastructure
       - kafka
@@ -19,8 +19,9 @@ services:
     environment:
       - ACTIVE_PROFILE=${PROFILE}
       - CONFIG_SERVER=${CONFIG_SERVER}
+      - SERVER_PORT=8051
     ports:
-      - 8051:8050
+      - "8051:8051"
     networks:
       - notification-infrastructure
       - kafka
