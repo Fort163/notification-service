@@ -7,6 +7,7 @@ services:
     environment:
       - ACTIVE_PROFILE=${PROFILE}
       - CONFIG_SERVER=${CONFIG_SERVER}
+      - INSTANCE_HOSTNAME=notification-cluster-notification-item-1-1
     ports:
       - "8050:8050"
     networks:
@@ -20,6 +21,7 @@ services:
       - ACTIVE_PROFILE=${PROFILE}
       - CONFIG_SERVER=${CONFIG_SERVER}
       - SERVER_PORT=8051
+      - INSTANCE_HOSTNAME=notification-cluster-notification-item-2-1
     ports:
       - "8051:8051"
     networks:
