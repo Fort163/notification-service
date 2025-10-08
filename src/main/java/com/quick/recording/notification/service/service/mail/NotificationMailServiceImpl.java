@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @NoArgsConstructor
-public class NotificationMailServiceImpl extends MainServiceAbstract<NotificationMailEntity, NotificationMailDto>
+public class NotificationMailServiceImpl
+        extends MainServiceAbstract<NotificationMailEntity, NotificationMailDto, NotificationMailRepository, NotificationMailMapper>
         implements NotificationMailService {
 
     @Autowired

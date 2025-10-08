@@ -15,7 +15,8 @@ import org.springframework.stereotype.Service;
 import java.util.Objects;
 
 @Service
-public class NotificationMessageServiceImpl extends MainServiceAbstract<NotificationMessageEntity, NotificationMessageDto>
+public class NotificationMessageServiceImpl
+        extends MainServiceAbstract<NotificationMessageEntity, NotificationMessageDto, NotificationMessageRepository, NotificationMessageMapper>
         implements NotificationMessageService {
 
     private final SimpMessagingTemplate template;

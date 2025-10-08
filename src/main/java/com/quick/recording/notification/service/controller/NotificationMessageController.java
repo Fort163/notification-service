@@ -18,8 +18,8 @@ public class NotificationMessageController extends MainControllerAbstract<Notifi
         NotificationMessageEntity, NotificationMessageServiceImpl> implements NotificationServiceNotificationMessageApi {
 
     @Autowired
-    private NotificationMessageController(NotificationMessageServiceImpl notificationMessageService) {
-        super(notificationMessageService);
+    private NotificationMessageController(NotificationMessageServiceImpl service) {
+        super(service);
     }
 
 }
