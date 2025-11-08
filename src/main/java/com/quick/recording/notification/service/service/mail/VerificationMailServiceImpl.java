@@ -27,7 +27,9 @@ public class VerificationMailServiceImpl implements VerificationMailService{
         VerificationMail verificationMail = verificationMailRepository.findById(mailCodeDto.getEmail()).orElseThrow(
                 () -> new NotFoundException(messageUtil, VerificationMail.class, mailCodeDto.getEmail())
         );
-        return passwordEncoder.matches(mailCodeDto.getCode(), verificationMail.getCode());
+        verificationMail.setVerified(passwordEncoder.matches(mailCodeDto.getCode(), verificationMail.getCode()));
+        verificationMail = verificationMailRepository.save(verificationMail);
+        return verificationMail.getVerified();
     }
 
 }
