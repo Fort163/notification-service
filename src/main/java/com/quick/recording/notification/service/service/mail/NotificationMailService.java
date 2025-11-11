@@ -5,7 +5,6 @@ import com.quick.recording.gateway.main.service.local.MainService;
 import com.quick.recording.notification.service.entity.NotificationMailEntity;
 import org.springframework.stereotype.Service;
 
-@Service
 public interface NotificationMailService extends MainService<NotificationMailEntity, NotificationMailDto> {
 
 }

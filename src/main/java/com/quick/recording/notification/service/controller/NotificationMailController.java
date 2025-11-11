@@ -5,7 +5,6 @@ import com.quick.recording.gateway.main.controller.MainControllerAbstract;
 import com.quick.recording.gateway.service.notification.NotificationServiceNotificationMailApi;
 import com.quick.recording.notification.service.entity.NotificationMailEntity;
 import com.quick.recording.notification.service.service.mail.NotificationMailService;
-import com.quick.recording.notification.service.service.mail.NotificationMailServiceImpl;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
